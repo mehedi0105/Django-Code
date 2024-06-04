@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock title %}</title>
+        <link rel="stylesheet" href="css/base.css">
+    </head>
+
+
+    <body>
+
+        <div class="header">
+            <a href="/" class="logo">Phitron-School</a>
+            <ul>
+                {% if request.user.is_authenticated %}
+                    <li><a href="{% url "logout" %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url "login" %}">Login</a></li>
+                {% endif %}
+            </ul>
+        </div>
+
+        <div class="content">
+            {% block content %}
+            {% endblock content %}
+        </div>
+
+
+        
+        
+    </body>
+
+
+</html>
