@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% load crispy_forms_tags%} {% block content %}
+<div>
+  <form
+    action=""
+    class="rounded p-5 w-50 m-auto"
+    style="box-shadow: 4px 4px 8px gray"
+  >
+    <h1 class="mb-5">Contact Us</h1>
+    {% csrf_token %} {{form|crispy}}
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
+</div>
+{% endblock %}
