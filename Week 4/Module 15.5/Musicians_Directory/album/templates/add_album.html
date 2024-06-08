@@ -2,7 +2,7 @@
 
 <form action="" class="w-50 m-auto" method="post">
   <h1>Add Album</h1>
-  lorea {% csrf_token %} {{form|crispy}}
+  {% csrf_token %} {{form|crispy}}
   <button class="btn btn-warning">Submit</button>
 </form>
 {% endblock %}
